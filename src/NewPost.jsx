@@ -14,13 +14,11 @@ const NewPost = ({ handleSubmit, postTitle, setPostTitle, postBody, setPostBody 
 					onChange={(e) => setPostTitle(e.target.value)}
 				/>
 				<label htmlFor="postBody">Post:</label>
-				<textarea 
-                id="postBody" 
-                required 
-                value={postBody} 
-                onChange={(e) => setPostBody(e.target.value)} />
+				<textarea id="postBody" required value={postBody} onChange={(e) => setPostBody(e.target.value)} />
+				<button type="submit" className="submit">
+					Submit
+				</button>
 			</form>
-            <button type="submit">Submit</button>
 		</main>
 	);
 };

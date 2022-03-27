@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { FaLaptop, FaTablet, FaMobile } from 'react-icons/fa';
 
-const Header = ({title}) => {
-  return (
-    <div className="Header">
-        <h1>{title}</h1>
-    </div>
-  )
-}
+const Header = ({ title, width }) => {
 
-export default Header
+	return (
+		<div className="Header">
+			<h1>{title}</h1>
+			{width < 768 ? <FaMobile /> : width < 992 ? <FaTablet /> : <FaLaptop />}
+		</div>
+	);
+};
+
+export default Header;
