@@ -27,14 +27,13 @@ const useAxiosFetch = (dataUrl) => {
 					setData([]);
 				}
 			} finally {
-				isMounted && setTimeout(() => setIsLoading(false), 2000);
+				isMounted && setIsLoading(false);
 			}
 		};
 
 		fetchData(dataUrl);
 
 		const cleanUp = () => {
-			console.log('cleanup function');
 			isMounted = false;
 			source.cancel();
 		};
@@ -42,5 +41,7 @@ const useAxiosFetch = (dataUrl) => {
 		return cleanUp;
 	}, [dataUrl]);
 
-    return  { data, fetchError, isLoading };
+	return { data, fetchError, isLoading };
 };
+
+export default useAxiosFetch;
